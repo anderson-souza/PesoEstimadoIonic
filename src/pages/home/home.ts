@@ -7,8 +7,16 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  tituloBotao = 'Calcular Altura'
+  idade = 0
+  comprimentoPerna = 0
+  sexo
   constructor(public navCtrl: NavController) {
+    
+  }
 
+  logEvent(){
+    console.log("Idade: " + this.idade + ". Comprimento Perna: " + this.comprimentoPerna + "Sexo: " + this.sexo);
   }
 
 }

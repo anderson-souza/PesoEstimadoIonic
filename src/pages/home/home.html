@@ -1,14 +1,46 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title>Calculadora Peso Estimado</ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+
+    <ion-list radio-group [(ngModel)]="sexo">
+        <ion-list-header>
+          Sexo
+        </ion-list-header>
+        <ion-item>
+            <ion-label>Masculino</ion-label>
+            <ion-radio value="Masculino" checked></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Feminino</ion-label>
+            <ion-radio value="Feminino" checked></ion-radio>
+        </ion-item>
+    </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Idade</ion-label>
+      <ion-input [(ngModel)]="idade" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Comprimento Perna</ion-label>
+      <ion-input type="number" [(ngModel)]="comprimentoPerna"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)=logEvent($event)>{{tituloBotao}}</button>
+
 </ion-content>
