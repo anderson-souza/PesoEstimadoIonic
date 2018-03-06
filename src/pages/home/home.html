@@ -2,13 +2,8 @@
   <ion-toolbar>
     <ion-title>Calculadora Peso Estimado</ion-title>
     <ion-buttons start>
-      <button ion-button icon-only color="royal">
-        <ion-icon name="search"></ion-icon>
-      </button>
-    </ion-buttons>
-    <ion-buttons end>
-      <button ion-button icon-only color="royal">
-        <ion-icon name="person-add"></ion-icon>
+      <button ion-button icon-only color="royal" (click)=limparCampos($event)>
+        <ion-icon name="trash"></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>
@@ -16,19 +11,19 @@
 
 <ion-content>
 
-    <ion-list radio-group [(ngModel)]="sexo">
-        <ion-list-header>
-          Sexo
-        </ion-list-header>
-        <ion-item>
-            <ion-label>Masculino</ion-label>
-            <ion-radio value="Masculino" checked></ion-radio>
-        </ion-item>
-        <ion-item>
-            <ion-label>Feminino</ion-label>
-            <ion-radio value="Feminino" checked></ion-radio>
-        </ion-item>
-    </ion-list>
+  <ion-list radio-group [(ngModel)]="sexo">
+    <ion-list-header>
+      Sexo
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Masculino</ion-label>
+      <ion-radio value="Masculino" checked></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Feminino</ion-label>
+      <ion-radio value="Feminino"></ion-radio>
+    </ion-item>
+  </ion-list>
 
   <ion-list>
     <ion-item>
@@ -41,6 +36,6 @@
       <ion-input type="number" [(ngModel)]="comprimentoPerna"></ion-input>
     </ion-item>
   </ion-list>
-  <button ion-button full (click)=logEvent($event)>{{tituloBotao}}</button>
-
+  <button ion-button full (click)=calcularAlturaEstimada($event)>{{tituloBotao}}</button>
+  <h1>A altura estimada é: {{alturaEstimada}}</h1>
 </ion-content>
