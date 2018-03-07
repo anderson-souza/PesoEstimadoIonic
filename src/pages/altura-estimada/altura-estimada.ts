@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AlturaEstimadaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Tabs } from 'ionic-angular/navigation/nav-interfaces';
 
 @IonicPage()
 @Component({
@@ -21,8 +15,11 @@ export class AlturaEstimadaPage {
   sexo = null
   alturaEstimada = 0
 
-  constructor(public navCtrl: NavController) {
-    
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  proximaAba(){
+    this.navCtrl.parent.select(1);
   }
 
   calcularAlturaEstimada(){

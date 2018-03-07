@@ -1,6 +1,6 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "Calculo Paciente Acamado",
+  "short_name": "Paciente Acamado",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{

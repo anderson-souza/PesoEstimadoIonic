@@ -9,5 +9,8 @@ import { AlturaEstimadaPage } from './altura-estimada';
   imports: [
     IonicPageModule.forChild(AlturaEstimadaPage),
   ],
+  entryComponents: [
+    AlturaEstimadaPage
+  ]
 })
 export class AlturaEstimadaPageModule {}
