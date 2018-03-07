@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Peso Estimado</ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only color="royal" (click)=limparCampos($event)>
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list radio-group [(ngModel)]="sexo">
+    <ion-list-header>
+      Sexo
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Masculino</ion-label>
+      <ion-radio value="Masculino" checked></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Feminino</ion-label>
+      <ion-radio value="Feminino"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-list radio-group [(ngModel)]="etnia">
+    <ion-list-header>
+      Etnia
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Branco</ion-label>
+      <ion-radio value="Branco" checked></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Negro</ion-label>
+      <ion-radio value="Negro"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Altura Joelho</ion-label>
+      <ion-input [(ngModel)]="alturaJoelho" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Circunferência do Braço</ion-label>
+      <ion-input type="number" [(ngModel)]="circunferenciaBraco"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full (click)=calcularPesoEstimado($event)>{{tituloBotao}}</button>
+  <h3>O peso estimado deste paciente é: {{pesoEstimado}} KGs</h3>
+
+</ion-content>

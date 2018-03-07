@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Calculo Indivíduo Acamado</ion-title>
+    <ion-title>Altura Estimada</ion-title>
     <ion-buttons start>
       <button ion-button icon-only color="royal" (click)=limparCampos($event)>
         <ion-icon name="trash"></ion-icon>
@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
 
   <ion-list radio-group [(ngModel)]="sexo">
     <ion-list-header>
@@ -37,5 +37,5 @@
     </ion-item>
   </ion-list>
   <button ion-button full (click)=calcularAlturaEstimada($event)>{{tituloBotao}}</button>
-  <h1>A altura estimada é: {{alturaEstimada}}</h1>
+  <h3>A altura estimada é: {{alturaEstimada}} metros</h3>
 </ion-content>
