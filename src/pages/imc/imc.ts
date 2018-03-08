@@ -9,6 +9,7 @@ import { AlertController } from 'ionic-angular';
 })
 export class ImcPage {
 
+  nomePagina = "IMC"
   peso = null
   altura = null
   imc = null
@@ -19,6 +20,10 @@ export class ImcPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ImcPage');
+  }
+
+  ionViewDidEnter(){
+   console.log("Entrou na página do IMC")
   }
 
   presentAlert() {

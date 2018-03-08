@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Peso Estimado</ion-title>
+    <ion-title>{{nomePagina}}</ion-title>
     <ion-buttons start>
       <button ion-button icon-only color="royal" (click)=limparCampos($event)>
         <ion-icon name="trash"></ion-icon>
@@ -55,5 +55,6 @@
   <button ion-button full (click)=calcularPesoEstimado($event)>{{tituloBotao}}</button>
   <button ion-button full (click)=proximaAba($event)>Alterar Aba</button>
   <h3>O peso estimado deste paciente é: {{pesoEstimado}} KGs</h3>
+  {{localData}}
 
 </ion-content>

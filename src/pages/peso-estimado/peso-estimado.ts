@@ -1,3 +1,4 @@
+import { DataProvider } from './../../providers/data/data';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -8,19 +9,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PesoEstimadoPage {
 
+  nomePagina = "Peso Estimado"
   sexo = null
   etnia = null
   alturaJoelho = null
   circunferenciaBraco = null
   tituloBotao = "Calcular"
   pesoEstimado = 0
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.sexo = this.navParams.get('sexo')
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PesoEstimadoPage');
+  public localData: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public data:DataProvider) {
+    this.localData = this.data.paramData;
+    console.log("Valor do localData: " + this.localData)
   }
 
   calcularPesoEstimado(){
