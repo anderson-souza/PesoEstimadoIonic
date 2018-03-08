@@ -42,6 +42,10 @@ export class PesoEstimadoPage {
     }
   }
 
+  proximaAba(){
+    this.navCtrl.parent.select(2);
+  }
+
   limparCampos(){
     this.sexo = null
     this.etnia = null

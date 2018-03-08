@@ -28,12 +28,12 @@
   <ion-list>
     <ion-item>
       <ion-label floating>Idade</ion-label>
-      <ion-input [(ngModel)]="idade" type="number"></ion-input>
+      <ion-input min=0 [(ngModel)]="idade" type="number"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Comprimento Perna</ion-label>
-      <ion-input type="number" [(ngModel)]="comprimentoPerna"></ion-input>
+      <ion-input min=0 type="number" [(ngModel)]="comprimentoPerna"></ion-input>
     </ion-item>
   </ion-list>
   <button ion-button full (click)=calcularAlturaEstimada($event)>{{tituloBotao}}</button>

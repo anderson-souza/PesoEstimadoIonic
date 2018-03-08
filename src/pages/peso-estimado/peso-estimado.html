@@ -43,16 +43,17 @@
   <ion-list>
     <ion-item>
       <ion-label floating>Altura Joelho</ion-label>
-      <ion-input [(ngModel)]="alturaJoelho" type="number"></ion-input>
+      <ion-input min=0 [(ngModel)]="alturaJoelho" type="number"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Circunferência do Braço</ion-label>
-      <ion-input type="number" [(ngModel)]="circunferenciaBraco"></ion-input>
+      <ion-input min=0 type="number" [(ngModel)]="circunferenciaBraco"></ion-input>
     </ion-item>
   </ion-list>
 
   <button ion-button full (click)=calcularPesoEstimado($event)>{{tituloBotao}}</button>
+  <button ion-button full (click)=proximaAba($event)>Alterar Aba</button>
   <h3>O peso estimado deste paciente é: {{pesoEstimado}} KGs</h3>
 
 </ion-content>
