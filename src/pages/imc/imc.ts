@@ -45,7 +45,7 @@ export class ImcPage {
     if(this.peso == null || this.altura == null){
       this.presentAlert()
     } else {
-      this.imc = Math.round(this.peso / (this.altura * this.altura))
+      this.imc = Math.round((this.peso / (this.altura * this.altura))*100) / 100
     }
     
   }

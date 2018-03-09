@@ -23,4 +23,84 @@
   </ion-list>
   <button ion-button full (click)=calcularIMC($event)>{{tituloBotao}}</button>
   <h1>O IMC do Paciente é: {{imc}}</h1>
+  <br>
+  <ion-grid>
+    <ion-row flex-wrap:nowrap justify-content:center>
+      <ion-col col-12 align-self: center>
+        TABELA IMC
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        IMC
+      </ion-col>
+      <ion-col>
+        Estado Nutricional
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        abaixo de 16
+      </ion-col>
+      <ion-col>
+        Magreza grave
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        16.0 - 16.9
+      </ion-col>
+      <ion-col>
+        Magreza moderada
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        17.0 - 18.4
+      </ion-col>
+      <ion-col>
+        Magreza leve
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        18.5 - 24.9
+      </ion-col>
+      <ion-col>
+        Saudável
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        25.0 - 29.9
+      </ion-col>
+      <ion-col>
+        Sobrepeso
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        30.0 - 34.9
+      </ion-col>
+      <ion-col>
+        Obesidade Grau I
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        35.0 - 39.9
+      </ion-col>
+      <ion-col>
+        Obesidade Grau II
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        acima de 40
+      </ion-col>
+      <ion-col>
+        Obesidade Grau III
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
