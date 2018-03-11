@@ -21,8 +21,21 @@
       <ion-input min=0 type="number" [(ngModel)]="altura"></ion-input>
     </ion-item>
   </ion-list>
-  <button ion-button full (click)=calcularIMC($event)>{{tituloBotao}}</button>
-  <h1>O IMC do Paciente é: {{imc}}</h1>
+  <button ion-button block icon-left (click)=calcularIMC($event)>
+    <ion-icon name="calculator"></ion-icon>
+    {{tituloBotao}}
+  </button>
+  <ion-card>
+    <ion-card-header>
+      IMC
+    </ion-card-header>
+    <ion-card-content>
+      O IMC deste paciente é:
+      <br>
+      <h3>{{imc}}</h3>
+    </ion-card-content>
+  </ion-card>
+
   <br>
   <ion-grid>
     <ion-row flex-wrap:nowrap justify-content:center>

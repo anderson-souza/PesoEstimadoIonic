@@ -1,3 +1,25 @@
-.list-header-md {
-  margin-bottom: 0px;
+.list-header {
+  padding-left: 16px;
+  min-height: 4.5rem;
+  border-bottom: 1px solid #dedede;
+  border-top: 0px;
+  font-size: 1.5rem;
+  color: #757575;
+}
+
+.list {
+  border-bottom: 1px solid #dedede;
+}
+
+.card-header {
+  font-weight: bold;
+}
+
+.list-header {
+  font-weight: bold;
+}
+
+.col {
+  border-bottom: 1px solid gray;
+  text-align: center;
 }

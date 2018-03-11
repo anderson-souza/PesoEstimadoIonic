@@ -14,7 +14,7 @@ export class PesoEstimadoPage {
   etnia = null
   alturaJoelho = null
   circunferenciaBraco = null
-  tituloBotao = "Calcular"
+  tituloBotao = "Calcular peso estimado"
   pesoEstimado = 0
   public localData: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public data:DataProvider) {

@@ -1,14 +1,13 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>{{nomePagina}}</ion-title>
-    <ion-buttons start>
+    <ion-buttons end>
       <button ion-button icon-only color="royal" (click)=limparCampos($event)>
         <ion-icon name="trash"></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 
 <ion-content padding>
 
@@ -52,9 +51,20 @@
     </ion-item>
   </ion-list>
 
-  <button ion-button full (click)=calcularPesoEstimado($event)>{{tituloBotao}}</button>
-  <button ion-button full (click)=proximaAba($event)>Alterar Aba</button>
-  <h3>O peso estimado deste paciente é: {{pesoEstimado}} KGs</h3>
-  {{localData}}
+  <button ion-button block icon-left (click)=calcularPesoEstimado($event)>
+    <ion-icon name="calculator"></ion-icon>
+    {{tituloBotao}}
+  </button>
 
+  <ion-card>
+    <ion-card-header>
+      Peso estimado
+    </ion-card-header>
+    <ion-card-content>
+      O peso estimado deste paciente é:
+      <br>
+      <h3>{{pesoEstimado}} KGs</h3>
+    </ion-card-content>
+    <button ion-button color="secondary" block (click)=proximaAba($event)>IMC</button>
+  </ion-card>
 </ion-content>

@@ -13,7 +13,7 @@ export class ImcPage {
   peso = null
   altura = null
   imc = null
-  tituloBotao = "Calcular"
+  tituloBotao = "Calcular IMC"
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
   }

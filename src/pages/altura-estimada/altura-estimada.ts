@@ -1,6 +1,6 @@
 import { DataProvider } from './../../providers/data/data';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
 import { Tabs } from 'ionic-angular/navigation/nav-interfaces';
 
 @IonicPage()
@@ -11,11 +11,12 @@ import { Tabs } from 'ionic-angular/navigation/nav-interfaces';
 export class AlturaEstimadaPage {
 
   nomePagina = "Altura Estimada"
-  tituloBotao = 'Calcular Altura'
+  tituloBotao = "Calcular altura estimada"
   idade = null
   comprimentoPerna = null
   sexo = null
   alturaEstimada = 0
+  @ViewChild(Content) content: Content;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public  data: DataProvider) {
   }
@@ -23,6 +24,7 @@ export class AlturaEstimadaPage {
   proximaAba(){
     this.data.paramData = 'Passei um dado daora show viado'
     this.navCtrl.parent.select(1);
+    this.content.scrollToTop();
   }
 
   calcularAlturaEstimada(){

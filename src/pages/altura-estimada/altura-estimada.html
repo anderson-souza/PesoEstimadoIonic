@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>{{nomePagina}}</ion-title>
-    <ion-buttons start>
+    <ion-buttons end>
       <button ion-button icon-only color="royal" (click)=limparCampos($event)>
         <ion-icon name="trash"></ion-icon>
       </button>
@@ -10,22 +10,20 @@
 </ion-header>
 
 <ion-content padding>
-
-  <ion-list radio-group [(ngModel)]="sexo">
-    <ion-list-header>
-      Sexo
-    </ion-list-header>
-    <ion-item>
-      <ion-label>Masculino</ion-label>
-      <ion-radio value="Masculino" checked></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>Feminino</ion-label>
-      <ion-radio value="Feminino"></ion-radio>
-    </ion-item>
-  </ion-list>
-
   <ion-list>
+    <ion-list radio-group [(ngModel)]="sexo">
+      <ion-list-header>
+        Sexo
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Masculino</ion-label>
+        <ion-radio value="Masculino" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Feminino</ion-label>
+        <ion-radio value="Feminino"></ion-radio>
+      </ion-item>
+    </ion-list>
     <ion-item>
       <ion-label floating>Idade</ion-label>
       <ion-input min=0 [(ngModel)]="idade" type="number"></ion-input>
@@ -36,7 +34,20 @@
       <ion-input min=0 type="number" [(ngModel)]="comprimentoPerna"></ion-input>
     </ion-item>
   </ion-list>
-  <button ion-button full (click)=calcularAlturaEstimada($event)>{{tituloBotao}}</button>
-  <button ion-button full (click)=proximaAba($event)>Alterar Aba</button>
-  <h3>A altura estimada é: {{alturaEstimada}} metros</h3>
+  <button ion-button block icon-left (click)=calcularAlturaEstimada($event)>
+    <ion-icon name="calculator"></ion-icon>
+    {{tituloBotao}}
+  </button>
+
+  <ion-card>
+    <ion-card-header>
+      Altura estimada
+    </ion-card-header>
+    <ion-card-content>
+      A altura estimada deste paciente é:
+      <br>
+      <h3>{{alturaEstimada}}m</h3>
+    </ion-card-content>
+    <button ion-button color="secondary" block (click)=proximaAba($event)>Peso Estimado</button>
+  </ion-card>
 </ion-content>
