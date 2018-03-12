@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>{{nomePagina}}</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only color="royal" (click)=limparCampos($event)>
+      <button ion-button icon-only color="royal" (click)=pacienteSingleton.limparCampos($event)>
         <ion-icon name="trash"></ion-icon>
       </button>
     </ion-buttons>
@@ -11,7 +11,7 @@
 
 <ion-content padding>
 
-  <ion-list radio-group [(ngModel)]="sexo">
+  <ion-list radio-group [(ngModel)]="pacienteSingleton.sexo">
     <ion-list-header>
       Sexo
     </ion-list-header>
@@ -25,7 +25,7 @@
     </ion-item>
   </ion-list>
 
-  <ion-list radio-group [(ngModel)]="etnia">
+  <ion-list radio-group [(ngModel)]="pacienteSingleton.etnia">
     <ion-list-header>
       Etnia
     </ion-list-header>
@@ -41,13 +41,13 @@
 
   <ion-list>
     <ion-item>
-      <ion-label floating>Altura Joelho</ion-label>
-      <ion-input min=0 [(ngModel)]="alturaJoelho" type="number"></ion-input>
+      <ion-label floating>Comprimento Perna</ion-label>
+      <ion-input min=0 [(ngModel)]="pacienteSingleton.comprimentoPerna" type="number"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Circunferência do Braço</ion-label>
-      <ion-input min=0 type="number" [(ngModel)]="circunferenciaBraco"></ion-input>
+      <ion-input min=0 type="number" [(ngModel)]="pacienteSingleton.circunferenciaBraco"></ion-input>
     </ion-item>
   </ion-list>
 
@@ -55,7 +55,6 @@
     <ion-icon name="calculator"></ion-icon>
     {{tituloBotao}}
   </button>
-  <h5>Aqui nós temos um exemplo do singleton funcionando {{pacienteSingleton.alturaEstimada}}</h5>
 
   <ion-card>
     <ion-card-header>
@@ -64,7 +63,7 @@
     <ion-card-content>
       O peso estimado deste paciente é:
       <br>
-      <h3>{{pesoEstimado}} KGs</h3>
+      <h3>{{pacienteSingleton.pesoEstimado}} KGs</h3>
     </ion-card-content>
     <button ion-button color="secondary" block (click)=proximaAba($event)>IMC</button>
   </ion-card>

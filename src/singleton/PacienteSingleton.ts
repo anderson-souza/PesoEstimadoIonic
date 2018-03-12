@@ -7,6 +7,15 @@ export class PacienteSingleton {
 
   private _sexo : String;
   private _comprimentoPerna : number;
+
+	public get circunferenciaBraco(): number {
+		return this._circunferenciaBraco;
+	}
+
+	public set circunferenciaBraco(value: number) {
+		this._circunferenciaBraco = value;
+	}
+  private _circunferenciaBraco : number;
   private _idade : number;
   private _etnia : String;
   private _alturaEstimada : number;
@@ -79,6 +88,15 @@ export class PacienteSingleton {
 
 	public set imcPaciente(value: number) {
 		this._imcPaciente = value;
-	}
+  }
 
+  public limparCampos(){
+    this._sexo = "";
+    this._comprimentoPerna = null;
+    this._idade = null;
+    this._etnia = "";
+    this._alturaEstimada = null;
+    this._pesoEstimado  = null;
+    this._imcPaciente  = null;
+  }
 }

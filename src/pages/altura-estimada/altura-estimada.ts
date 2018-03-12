@@ -1,3 +1,4 @@
+import { PacienteSingleton } from './../../singleton/PacienteSingleton';
 import { DataProvider } from './../../providers/data/data';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
@@ -12,10 +13,7 @@ export class AlturaEstimadaPage {
 
   nomePagina = "Altura Estimada"
   tituloBotao = "Calcular altura estimada"
-  idade = null
-  comprimentoPerna = null
-  sexo = null
-  alturaEstimada = 0
+  pacienteSingleton = PacienteSingleton.getInstance();
   @ViewChild(Content) content: Content;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public  data: DataProvider) {
@@ -28,24 +26,14 @@ export class AlturaEstimadaPage {
   }
 
   calcularAlturaEstimada(){
-    if(this.sexo != null){
-      if(this.sexo == "Masculino"){
-        this.alturaEstimada = (2.02 * this.comprimentoPerna) - (0.04 * this.idade) + 64.19;
+    if(this.pacienteSingleton.sexo != null){
+      if(this.pacienteSingleton.sexo == "Masculino"){
+        this.pacienteSingleton.alturaEstimada = (2.02 * this.pacienteSingleton.comprimentoPerna) - (0.04 * this.pacienteSingleton.idade) + 64.19;
       } else{
-        this.alturaEstimada = (1.83 * this.comprimentoPerna) - (0.24 * this.idade) + 84.88;
+        this.pacienteSingleton.alturaEstimada = (1.83 * this.pacienteSingleton.comprimentoPerna) - (0.24 * this.pacienteSingleton.idade) + 84.88;
       }
-      this.alturaEstimada = Math.round(this.alturaEstimada)
-      this.alturaEstimada /= 100
+      this.pacienteSingleton.alturaEstimada = Math.round(this.pacienteSingleton.alturaEstimada)
+      this.pacienteSingleton.alturaEstimada /= 100
     }
-  }
-
-  logEvent(){
-    console.log("Idade: " + this.idade + ". Comprimento Perna: " + this.comprimentoPerna + "Sexo: " + this.sexo);
-  }
-
-  limparCampos(){
-    this.idade = null
-    this.comprimentoPerna = null
-    this.sexo = null
   }
 }

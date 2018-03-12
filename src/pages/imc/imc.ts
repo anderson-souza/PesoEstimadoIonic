@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { PacienteSingleton } from '../../singleton/PacienteSingleton';
 
 @IonicPage()
 @Component({
@@ -10,10 +11,8 @@ import { AlertController } from 'ionic-angular';
 export class ImcPage {
 
   nomePagina = "IMC"
-  peso = null
-  altura = null
-  imc = null
   tituloBotao = "Calcular IMC"
+  pacienteSingleton = PacienteSingleton.getInstance();
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
   }
@@ -35,19 +34,13 @@ export class ImcPage {
     alert.present();
   }
 
-  limparCampos(){
-    this.imc = null
-    this.peso = null
-    this.altura = null
-  }
-
   calcularIMC() {
-    if(this.peso == null || this.altura == null){
+    if(this.pacienteSingleton.pesoEstimado == null || this.pacienteSingleton.alturaEstimada == null){
       this.presentAlert()
     } else {
-      this.imc = Math.round((this.peso / (this.altura * this.altura))*100) / 100
+      this.pacienteSingleton.imcPaciente = Math.round((this.pacienteSingleton.pesoEstimado / (this.pacienteSingleton.alturaEstimada * this.pacienteSingleton.alturaEstimada))*100) / 100
     }
-    
+
   }
 
 }
