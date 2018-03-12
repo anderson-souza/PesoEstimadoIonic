@@ -1,6 +1,7 @@
 import { DataProvider } from './../../providers/data/data';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
+import { PacienteSingleton } from '../../singleton/PacienteSingleton';
 
 @IonicPage()
 @Component({
@@ -16,6 +17,9 @@ export class PesoEstimadoPage {
   circunferenciaBraco = null
   tituloBotao = "Calcular peso estimado"
   pesoEstimado = 0
+  pacienteSingleton = PacienteSingleton.getInstance();
+  @ViewChild(Content) content: Content;
+
   public localData: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public data:DataProvider) {
     this.localData = this.data.paramData;
@@ -39,10 +43,12 @@ export class PesoEstimadoPage {
       }
       this.pesoEstimado = Math.round(this.pesoEstimado);
     }
+    this.pacienteSingleton.alturaEstimada = 10;
   }
 
   proximaAba(){
     this.navCtrl.parent.select(2);
+    this.content.scrollToTop();
   }
 
   limparCampos(){
