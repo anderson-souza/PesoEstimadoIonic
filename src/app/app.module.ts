@@ -11,7 +11,6 @@ import { PacienteSingleton } from './../singleton/PacienteSingleton';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from './../pages/tabs/tabs';
-import { DataProvider } from '../providers/data/data';
 
 @NgModule({
   declarations: [
@@ -36,7 +35,6 @@ import { DataProvider } from '../providers/data/data';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataProvider,
     PacienteSingleton
   ]
 })
