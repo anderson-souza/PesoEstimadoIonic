@@ -34,7 +34,7 @@
       <ion-input min=0 type="number" [(ngModel)]="pacienteSingleton.comprimentoPerna"></ion-input>
     </ion-item>
   </ion-list>
-  <button ion-button block icon-left (click)=calcularAlturaEstimada($event)>
+  <button ion-button block icon-left (click)=pacienteSingleton.calcularAlturaEstimada($event)>
     <ion-icon name="calculator"></ion-icon>
     {{tituloBotao}}
   </button>
