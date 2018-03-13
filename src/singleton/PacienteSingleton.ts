@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import "rxjs/add/operator/map";
-import { AlertController } from "ionic-angular";
 
 @Injectable()
 export class PacienteSingleton {

@@ -7,6 +7,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
 import { PacienteSingleton } from "./../singleton/PacienteSingleton";
+import { TooltipsModule } from "ionic-tooltips";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { MyApp } from "./app.component";
 import { TabsPage } from "./../pages/tabs/tabs";
@@ -18,7 +20,9 @@ import { TabsPage } from "./../pages/tabs/tabs";
     IonicModule.forRoot(MyApp),
     AlturaEstimadaPageModule,
     PesoEstimadoPageModule,
-    ImcPageModule
+    ImcPageModule,
+    TooltipsModule,
+    BrowserAnimationsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, TabsPage],

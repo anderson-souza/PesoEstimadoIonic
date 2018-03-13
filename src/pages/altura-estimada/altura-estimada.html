@@ -14,6 +14,9 @@
     <ion-list radio-group [(ngModel)]="pacienteSingleton.sexo">
       <ion-item-divider>
         Sexo
+        <button ion-button item-end icon-only clear tooltip="I'm a tooltip below a button" positionV="bottom">
+          <ion-icon name="help"></ion-icon>
+        </button>
       </ion-item-divider>
       <ion-item>
         <ion-label>Masculino</ion-label>
@@ -24,15 +27,23 @@
         <ion-radio value="Feminino"></ion-radio>
       </ion-item>
     </ion-list>
+
     <ion-item>
       <ion-label floating>Idade</ion-label>
       <ion-input min=0 [(ngModel)]="pacienteSingleton.idade" type="number"></ion-input>
+      <button ion-button item-end icon-only clear>
+        <ion-icon name="help"></ion-icon>
+      </button>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Comprimento Perna</ion-label>
       <ion-input min=0 type="number" [(ngModel)]="pacienteSingleton.comprimentoPerna"></ion-input>
+      <button ion-button item-end icon-only clear>
+        <ion-icon name="help"></ion-icon>
+      </button>
     </ion-item>
+
   </ion-list>
   <button ion-button block icon-left (click)=pacienteSingleton.calcularAlturaEstimada($event)>
     <ion-icon name="calculator"></ion-icon>

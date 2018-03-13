@@ -1,7 +1,6 @@
 import { PacienteSingleton } from "./../../singleton/PacienteSingleton";
 import { Component, ViewChild } from "@angular/core";
 import { IonicPage, NavController, NavParams, Content } from "ionic-angular";
-import { Tabs } from "ionic-angular/navigation/nav-interfaces";
 
 @IonicPage()
 @Component({
@@ -14,10 +13,7 @@ export class AlturaEstimadaPage {
   pacienteSingleton = PacienteSingleton.getInstance();
   @ViewChild(Content) content: Content;
 
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-  ) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   proximaAba() {
     this.navCtrl.parent.select(1);
