@@ -14,7 +14,7 @@
     <ion-list radio-group [(ngModel)]="pacienteSingleton.sexo">
       <ion-item-divider>
         Sexo
-        <button ion-button item-end icon-only clear tooltip="I'm a tooltip below a button" positionV="bottom">
+        <button ion-button item-end icon-only clear tooltip="Informe o Sexo do Paciente" positionV="bottom" positionH="right">
           <ion-icon name="help"></ion-icon>
         </button>
       </ion-item-divider>
@@ -31,7 +31,7 @@
     <ion-item>
       <ion-label floating>Idade</ion-label>
       <ion-input min=0 [(ngModel)]="pacienteSingleton.idade" type="number"></ion-input>
-      <button ion-button item-end icon-only clear>
+      <button ion-button item-end icon-only clear tooltip="Informe a idade do paciente" positionV="bottom" positionH="right" arrow>
         <ion-icon name="help"></ion-icon>
       </button>
     </ion-item>
@@ -39,7 +39,7 @@
     <ion-item>
       <ion-label floating>Comprimento Perna</ion-label>
       <ion-input min=0 type="number" [(ngModel)]="pacienteSingleton.comprimentoPerna"></ion-input>
-      <button ion-button item-end icon-only clear>
+        <button ion-button item-end icon-only clear tooltip="Informe o comprimento da perna(cm)" positionV="bottom" positionH="right" arrow>
         <ion-icon name="help"></ion-icon>
       </button>
     </ion-item>

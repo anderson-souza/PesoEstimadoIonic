@@ -20,9 +20,7 @@ import { TabsPage } from "./../pages/tabs/tabs";
     IonicModule.forRoot(MyApp),
     AlturaEstimadaPageModule,
     PesoEstimadoPageModule,
-    ImcPageModule,
-    TooltipsModule,
-    BrowserAnimationsModule
+    ImcPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, TabsPage],

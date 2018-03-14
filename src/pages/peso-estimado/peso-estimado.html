@@ -14,6 +14,9 @@
   <ion-list radio-group [(ngModel)]="pacienteSingleton.sexo">
     <ion-item-divider>
       Sexo
+      <button ion-button item-end icon-only clear tooltip="Informe o Sexo do Paciente" positionV="bottom" positionH="right">
+        <ion-icon name="help"></ion-icon>
+      </button>
     </ion-item-divider>
     <ion-item>
       <ion-label>Masculino</ion-label>
@@ -28,6 +31,9 @@
   <ion-list radio-group [(ngModel)]="pacienteSingleton.etnia">
     <ion-item-divider>
       Etnia
+      <button ion-button item-end icon-only clear tooltip="Informe a Etnia do Paciente" positionV="bottom" positionH="right">
+        <ion-icon name="help"></ion-icon>
+      </button>
     </ion-item-divider>
     <ion-item>
       <ion-label>Branco</ion-label>
@@ -43,11 +49,17 @@
     <ion-item>
       <ion-label floating>Comprimento Perna</ion-label>
       <ion-input min=0 [(ngModel)]="pacienteSingleton.comprimentoPerna" type="number"></ion-input>
+      <button ion-button item-end icon-only clear tooltip="Informe o comprimento da perna(cm)" positionV="bottom" positionH="right" arrow>
+        <ion-icon name="help"></ion-icon>
+      </button>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Circunferência do Braço</ion-label>
       <ion-input min=0 type="number" [(ngModel)]="pacienteSingleton.circunferenciaBraco"></ion-input>
+      <button ion-button item-end icon-only clear tooltip="Informe a circunferência do braço(cm)" positionV="bottom" positionH="right" arrow>
+        <ion-icon name="help"></ion-icon>
+      </button>
     </ion-item>
   </ion-list>
 
