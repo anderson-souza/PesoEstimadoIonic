@@ -48,7 +48,7 @@
   <ion-list>
     <ion-item>
       <ion-label floating>Comprimento Perna</ion-label>
-      <ion-input min=0 [(ngModel)]="pacienteSingleton.comprimentoPerna" type="number"></ion-input>
+      <ion-input ng-pattern="/^[0-9]+/" min=0 [(ngModel)]="pacienteSingleton.comprimentoPerna" type="number"></ion-input>
       <button ion-button item-end icon-only clear tooltip="Informe o comprimento da perna(cm)" positionV="bottom" positionH="right" arrow>
         <ion-icon name="help"></ion-icon>
       </button>
@@ -56,7 +56,7 @@
 
     <ion-item>
       <ion-label floating>Circunferência do Braço</ion-label>
-      <ion-input min=0 type="number" [(ngModel)]="pacienteSingleton.circunferenciaBraco"></ion-input>
+      <ion-input ng-pattern="/^[0-9]+/" min=0 type="number" [(ngModel)]="pacienteSingleton.circunferenciaBraco"></ion-input>
       <button ion-button item-end icon-only clear tooltip="Informe a circunferência do braço(cm)" positionV="bottom" positionH="right" arrow>
         <ion-icon name="help"></ion-icon>
       </button>

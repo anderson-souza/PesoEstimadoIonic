@@ -13,7 +13,7 @@
   <ion-list>
     <ion-item>
       <ion-label floating>Peso</ion-label>
-      <ion-input min=0 [(ngModel)]="pacienteSingleton.pesoEstimado" type="number"></ion-input>
+      <ion-input ng-pattern="/^[0-9]+/" min=0 [(ngModel)]="pacienteSingleton.pesoEstimado" type="number"></ion-input>
       <button ion-button item-end icon-only clear tooltip="Informe o peso do paciente(kg)" positionV="bottom" positionH="right" arrow>
         <ion-icon name="help"></ion-icon>
       </button>
