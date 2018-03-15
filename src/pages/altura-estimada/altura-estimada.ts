@@ -5,7 +5,8 @@ import {
   IonicPage,
   NavController,
   NavParams,
-  Content
+  Content,
+  ModalController
 } from "ionic-angular";
 
 @IonicPage()
@@ -22,7 +23,8 @@ export class AlturaEstimadaPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public actionSheetCtrl: ActionSheetController
+    public actionSheetCtrl: ActionSheetController,
+    public modalCtrl: ModalController
   ) {}
 
   proximaAba() {
@@ -44,6 +46,7 @@ export class AlturaEstimadaPage {
           text: "Sobre",
           handler: () => {
             console.log("Clicou no botão Sobre");
+            this.presentModal();
           }
         },
         {
@@ -56,5 +59,10 @@ export class AlturaEstimadaPage {
       ]
     });
     actionSheet.present();
+  }
+
+  presentModal() {
+    let modal = this.modalCtrl.create("ModalPage");
+    modal.present();
   }
 }
