@@ -6,6 +6,11 @@
         <ion-icon name="trash"></ion-icon>
       </button>
     </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)=presentActionSheet($event)>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +19,7 @@
     <ion-list radio-group [(ngModel)]="pacienteSingleton.sexo">
       <ion-item-divider>
         Sexo
-        <button ion-button item-end icon-only center clear tooltip="Informe o Sexo do Paciente" positionV="bottom" positionH="right">
+        <button ion-button item-end icon-only clear tooltip="Informe o Sexo do Paciente" positionV="bottom" positionH="right">
           <ion-icon name="help"></ion-icon>
         </button>
       </ion-item-divider>
@@ -39,7 +44,8 @@
     <ion-item>
       <ion-label floating>Comprimento Perna</ion-label>
       <ion-input ng-pattern="/^[0-9]+/" min=0 type="number" [(ngModel)]="pacienteSingleton.comprimentoPerna"></ion-input>
-      <button ion-button item-end icon-only clear tooltip="Informe o comprimento da perna(cm)" positionV="bottom" positionH="right" arrow>
+      <button ion-button item-end icon-only clear tooltip="Informe o comprimento da perna(cm)" positionV="bottom" positionH="right"
+        arrow>
         <ion-icon name="help"></ion-icon>
       </button>
     </ion-item>
