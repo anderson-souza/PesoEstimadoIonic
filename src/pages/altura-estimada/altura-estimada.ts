@@ -40,13 +40,14 @@ export class AlturaEstimadaPage {
           text: "Como o cálculo foi realizado?",
           handler: () => {
             console.log("Clicou no botão cálculo");
+            this.presentModalCalculo();
           }
         },
         {
           text: "Sobre",
           handler: () => {
             console.log("Clicou no botão Sobre");
-            this.presentModal();
+            this.presentModalSobre();
           }
         },
         {
@@ -61,8 +62,13 @@ export class AlturaEstimadaPage {
     actionSheet.present();
   }
 
-  presentModal() {
-    let modal = this.modalCtrl.create("ModalPage");
+  presentModalSobre() {
+    let modal = this.modalCtrl.create("ModalPageSobre");
+    modal.present();
+  }
+
+  presentModalCalculo(){
+    let modal = this.modalCtrl.create("ModalCalculoPage");
     modal.present();
   }
 }

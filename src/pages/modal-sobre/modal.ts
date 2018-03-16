@@ -6,7 +6,7 @@ import { IonicPage, NavController, NavParams, ViewController } from "ionic-angul
   selector: "page-modal",
   templateUrl: "modal.html"
 })
-export class ModalPage {
+export class ModalPageSobre {
   constructor(
     public viewCtrl: ViewController,
     public navCtrl: NavController,
@@ -14,7 +14,7 @@ export class ModalPage {
   ) {}
 
   ionViewDidLoad() {
-    console.log("ionViewDidLoad ModalPage");
+    console.log("ionViewDidLoad ModalPageSobre");
   }
 
   closeModal() {
