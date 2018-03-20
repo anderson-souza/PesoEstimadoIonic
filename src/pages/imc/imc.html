@@ -10,24 +10,34 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item>
-      <ion-label floating>Peso</ion-label>
-      <ion-input ng-pattern="/^[0-9]+/" min=0 [(ngModel)]="pacienteSingleton.pesoEstimado" type="number"></ion-input>
-      <button ion-button item-end icon-only clear tooltip="Informe o peso do paciente(kg)" positionV="bottom" positionH="right" arrow>
-        <ion-icon name="help"></ion-icon>
-      </button>
-    </ion-item>
+  <form [formGroup]="formValidator">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Peso</ion-label>
+        <ion-input formControlName="peso" [(ngModel)]="pacienteSingleton.pesoEstimado" type="number"></ion-input>
+        <button ion-button item-end icon-only clear tooltip="Informe o peso do paciente(kg)" positionV="bottom" positionH="right"
+          arrow>
+          <ion-icon name="help"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item *ngIf="!formValidator.controls.peso.valid && calculoRealizado">
+        <p style="color:red;">Informe um peso válido</p>
+      </ion-item>
 
-    <ion-item>
-      <ion-label floating>Altura</ion-label>
-      <ion-input ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" min="0" type="number" [(ngModel)]="pacienteSingleton.alturaEstimada"></ion-input>
-      <button ion-button item-end icon-only clear tooltip="Informe a altura do paciente(m)" positionV="bottom" positionH="right" arrow>
-        <ion-icon name="help"></ion-icon>
-      </button>
-    </ion-item>
-  </ion-list>
-  <button ion-button block icon-left (click)=pacienteSingleton.calcularIMC($event)>
+      <ion-item>
+        <ion-label floating>Altura</ion-label>
+        <ion-input formControlName="altura" step="0.01" type="number" [(ngModel)]="pacienteSingleton.alturaEstimada"></ion-input>
+        <button ion-button item-end icon-only clear tooltip="Informe a altura do paciente(m)" positionV="bottom" positionH="right"
+          arrow>
+          <ion-icon name="help"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item *ngIf="!formValidator.controls.altura.valid && calculoRealizado">
+        <p style="color:red;">Informe uma altura válida</p>
+      </ion-item>
+    </ion-list>
+  </form>
+  <button ion-button block icon-left (click)=calcularIMC($event)>
     <ion-icon name="calculator"></ion-icon>
     {{tituloBotao}}
   </button>

@@ -11,61 +11,75 @@
 
 <ion-content padding>
 
-  <ion-list radio-group [(ngModel)]="pacienteSingleton.sexo">
-    <ion-item-divider>
-      Sexo
-      <button ion-button item-end icon-only clear tooltip="Informe o Sexo do Paciente" positionV="bottom" positionH="right">
-        <ion-icon name="help"></ion-icon>
-      </button>
-    </ion-item-divider>
-    <ion-item>
-      <ion-label>Masculino</ion-label>
-      <ion-radio value="Masculino" checked></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>Feminino</ion-label>
-      <ion-radio value="Feminino"></ion-radio>
-    </ion-item>
-  </ion-list>
-
-  <ion-list required radio-group [(ngModel)]="pacienteSingleton.etnia">
-    <ion-item-divider>
-      Etnia
-      <button ion-button item-end icon-only clear tooltip="Informe a Etnia do Paciente" positionV="bottom" positionH="right">
-        <ion-icon name="help"></ion-icon>
-      </button>
-    </ion-item-divider>
-    <ion-item>
-      <ion-label>Branco</ion-label>
-      <ion-radio value="Branco" checked></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>Negro</ion-label>
-      <ion-radio value="Negro"></ion-radio>
-    </ion-item>
-  </ion-list>
-
-  <ion-list>
-    <ion-item>
-      <ion-label floating>Comprimento Perna</ion-label>
-      <ion-input required ng-pattern="/^[0-9]+/" min=0 [(ngModel)]="pacienteSingleton.comprimentoPerna" type="number"></ion-input>
-      <button ion-button item-end icon-only clear tooltip="Informe o comprimento da perna(cm)" positionV="bottom" positionH="right"
-        arrow>
-        <ion-icon name="help"></ion-icon>
-      </button>
+  <form [formGroup]="formValidator">
+    <ion-list radio-group formControlName="sexo" [(ngModel)]="pacienteSingleton.sexo">
+      <ion-item-divider>
+        Sexo
+        <button ion-button item-end icon-only clear tooltip="Informe o Sexo do Paciente" positionV="bottom" positionH="right">
+          <ion-icon name="help"></ion-icon>
+        </button>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Masculino</ion-label>
+        <ion-radio value="Masculino"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Feminino</ion-label>
+        <ion-radio value="Feminino"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <ion-item *ngIf="!formValidator.controls.sexo.valid && calculoRealizado">
+      <p style="color:red;">Selecione um sexo</p>
     </ion-item>
 
-    <ion-item>
-      <ion-label floating>Circunferência do Braço</ion-label>
-      <ion-input ng-pattern="/^[0-9]+/" min=0 type="number" [(ngModel)]="pacienteSingleton.circunferenciaBraco"></ion-input>
-      <button ion-button item-end icon-only clear tooltip="Informe a circunferência do braço(cm)" positionV="bottom" positionH="right"
-        arrow>
-        <ion-icon name="help"></ion-icon>
-      </button>
+    <ion-list required radio-group formControlName="etnia" [(ngModel)]="pacienteSingleton.etnia">
+      <ion-item-divider>
+        Etnia
+        <button ion-button item-end icon-only clear tooltip="Informe a Etnia do Paciente" positionV="bottom" positionH="right">
+          <ion-icon name="help"></ion-icon>
+        </button>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Branco</ion-label>
+        <ion-radio value="Branco"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Negro</ion-label>
+        <ion-radio value="Negro"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <ion-item *ngIf="!formValidator.controls.etnia.valid && calculoRealizado">
+      <p style="color:red;">Selecione uma etnia</p>
     </ion-item>
-  </ion-list>
 
-  <button ion-button block icon-left (click)=pacienteSingleton.calcularPesoEstimado($event)>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Comprimento Perna</ion-label>
+        <ion-input formControlName="compPerna" [(ngModel)]="pacienteSingleton.comprimentoPerna" type="number"></ion-input>
+        <button ion-button item-end icon-only clear tooltip="Informe o comprimento da perna(cm)" positionV="bottom" positionH="right"
+          arrow>
+          <ion-icon name="help"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item *ngIf="!formValidator.controls.compPerna.valid && calculoRealizado">
+        <p style="color:red;">Informe um comprimento válido</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Circunferência do Braço</ion-label>
+        <ion-input formControlName="circBraco" type="number" [(ngModel)]="pacienteSingleton.circunferenciaBraco"></ion-input>
+        <button ion-button item-end icon-only clear tooltip="Informe a circunferência do braço(cm)" positionV="bottom" positionH="right"
+          arrow>
+          <ion-icon name="help"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item *ngIf="!formValidator.controls.circBraco.valid && calculoRealizado">
+        <p style="color:red;">Informe uma circunferência válida</p>
+      </ion-item>
+    </ion-list>
+  </form>
+
+  <button ion-button block icon-left (click)=calcularPesoEstimado($event)>
     <ion-icon name="calculator"></ion-icon>
     {{tituloBotao}}
   </button>
