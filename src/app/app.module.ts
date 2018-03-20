@@ -1,3 +1,4 @@
+import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { ImcPageModule } from "./../pages/imc/imc.module";
 import { PesoEstimadoPageModule } from "./../pages/peso-estimado/peso-estimado.module";
 import { AlturaEstimadaPageModule } from "./../pages/altura-estimada/altura-estimada.module";
@@ -26,7 +27,8 @@ import { TabsPage } from "./../pages/tabs/tabs";
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    PacienteSingleton
+    PacienteSingleton,
+    InAppBrowser
   ]
 })
 export class AppModule {}
