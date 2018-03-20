@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { PacienteSingleton } from "./../../singleton/PacienteSingleton";
 import { Component, ViewChild } from "@angular/core";
 import {
@@ -15,17 +16,47 @@ import {
   templateUrl: "altura-estimada.html"
 })
 export class AlturaEstimadaPage {
+  @ViewChild(Content) content: Content;
   nomePagina = "Altura Estimada";
   tituloBotao = "Calcular altura estimada";
   pacienteSingleton = PacienteSingleton.getInstance();
-  @ViewChild(Content) content: Content;
+  formValidator: FormGroup;
+  calculoRealizado: boolean = false;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public actionSheetCtrl: ActionSheetController,
-    public modalCtrl: ModalController
-  ) {}
+    public modalCtrl: ModalController,
+    public formBuilder: FormBuilder
+  ) {
+    this.formValidator = formBuilder.group({
+      sexo: ["", Validators.required],
+      idade: [
+        "",
+        Validators.compose([
+          Validators.pattern("^[0-9]+"),
+          Validators.required,
+          Validators.min(0)
+        ])
+      ],
+      compPerna: [
+        "",
+        Validators.compose([
+          Validators.pattern("^[0-9]+"),
+          Validators.required,
+          Validators.min(0)
+        ])
+      ]
+    });
+  }
+
+  calcularAlturaEstimada() {
+    this.calculoRealizado = true;
+    if (this.formValidator.valid) {
+      this.pacienteSingleton.calcularAlturaEstimada();
+    }
+  }
 
   proximaAba() {
     this.navCtrl.parent.select(1);
@@ -67,7 +98,7 @@ export class AlturaEstimadaPage {
     modal.present();
   }
 
-  presentModalCalculo(){
+  presentModalCalculo() {
     let modal = this.modalCtrl.create("ModalCalculoPage");
     modal.present();
   }

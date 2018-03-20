@@ -14,6 +14,13 @@ export class PacienteSingleton {
   private _pesoEstimado: number;
   private _imcPaciente: number;
 
+  constructor() {
+    if (PacienteSingleton._instance) {
+      throw new Error("Erro ao criar o PacienteSingleton");
+    }
+    PacienteSingleton._instance = this;
+  }
+
   public get circunferenciaBraco(): number {
     return this._circunferenciaBraco;
   }
@@ -24,13 +31,6 @@ export class PacienteSingleton {
 
   public static getInstance(): PacienteSingleton {
     return PacienteSingleton._instance;
-  }
-
-  constructor() {
-    if (PacienteSingleton._instance) {
-      throw new Error("Erro ao criar o Singleton");
-    }
-    PacienteSingleton._instance = this;
   }
 
   public get sexo(): String {
@@ -101,62 +101,54 @@ export class PacienteSingleton {
   }
 
   calcularAlturaEstimada() {
-    if (this.sexo != null) {
-      if (this.sexo == "Masculino") {
-        this.alturaEstimada =
-          2.02 * this.comprimentoPerna - 0.04 * this.idade + 64.19;
-      } else {
-        this.alturaEstimada =
-          1.83 * this.comprimentoPerna - 0.24 * this.idade + 84.88;
-      }
-      this.alturaEstimada = Math.round(this.alturaEstimada);
-      this.alturaEstimada /= 100;
+    if (this.sexo == "Masculino") {
+      this.alturaEstimada =
+        2.02 * this.comprimentoPerna - 0.04 * this.idade + 64.19;
+    } else {
+      this.alturaEstimada =
+        1.83 * this.comprimentoPerna - 0.24 * this.idade + 84.88;
     }
+    this.alturaEstimada = Math.round(this.alturaEstimada);
+    this.alturaEstimada /= 100;
   }
 
   calcularPesoEstimado() {
-    if (this.sexo != null && this.etnia != null) {
-      if (this.sexo == "Masculino") {
-        if (this.etnia == "Branco") {
-          //Homem Branco
-          this.pesoEstimado =
-            this.comprimentoPerna * 1.19 +
-            this.circunferenciaBraco * 3.21 -
-            86.82;
-        } else {
-          //Homem Negro
-          this.pesoEstimado =
-            this.comprimentoPerna * 1.09 +
-            this.circunferenciaBraco * 3.14 -
-            83.72;
-        }
+    if (this.sexo == "Masculino") {
+      if (this.etnia == "Branco") {
+        //Homem Branco
+        this.pesoEstimado =
+          this.comprimentoPerna * 1.19 +
+          this.circunferenciaBraco * 3.21 -
+          86.82;
       } else {
-        if (this.etnia == "Branco") {
-          //Mulher Branca
-          this.pesoEstimado =
-            this.comprimentoPerna * 1.01 +
-            this.circunferenciaBraco * 2.81 -
-            66.04;
-        } else {
-          //Mulher Negra
-          this.pesoEstimado =
-            this.comprimentoPerna * 1.24 +
-            this.circunferenciaBraco * 2.81 -
-            82.48;
-        }
+        //Homem Negro
+        this.pesoEstimado =
+          this.comprimentoPerna * 1.09 +
+          this.circunferenciaBraco * 3.14 -
+          83.72;
       }
-      this.pesoEstimado = Math.round(this.pesoEstimado);
+    } else {
+      if (this.etnia == "Branco") {
+        //Mulher Branca
+        this.pesoEstimado =
+          this.comprimentoPerna * 1.01 +
+          this.circunferenciaBraco * 2.81 -
+          66.04;
+      } else {
+        //Mulher Negra
+        this.pesoEstimado =
+          this.comprimentoPerna * 1.24 +
+          this.circunferenciaBraco * 2.81 -
+          82.48;
+      }
     }
+    this.pesoEstimado = Math.round(this.pesoEstimado);
   }
 
   calcularIMC() {
-    if (this.pesoEstimado == null || this.alturaEstimada == null) {
-      //TODO: Mensagem de Erro
-    } else {
-      this.imcPaciente =
-        Math.round(
-          this.pesoEstimado / (this.alturaEstimada * this.alturaEstimada) * 100
-        ) / 100;
-    }
+    this.imcPaciente =
+      Math.round(
+        this.pesoEstimado / (this.alturaEstimada * this.alturaEstimada) * 100
+      ) / 100;
   }
 }

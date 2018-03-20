@@ -2,7 +2,7 @@
   "name": "CalculadoraPesoEstimado",
   "version": "0.0.1",
   "author": "Anderson Souza",
-  "homepage": "http://ionicframework.com/",
+  "homepage": "",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -45,7 +45,7 @@
     "@ionic/app-scripts": "3.1.8",
     "typescript": "2.7.2"
   },
-  "description": "An Ionic project",
+  "description": "Calculadora para cálculo de paciente acamado",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
@@ -55,8 +55,6 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-inappbrowser": {}
     },
-    "platforms": [
-      "android"
-    ]
+    "platforms": ["android"]
   }
 }
