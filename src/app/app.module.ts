@@ -11,6 +11,7 @@ import { PacienteSingleton } from "./../singleton/PacienteSingleton";
 
 import { MyApp } from "./app.component";
 import { TabsPage } from "./../pages/tabs/tabs";
+import { TabelaImcProvider } from '../providers/tabela-imc/tabela-imc';
 
 @NgModule({
   declarations: [MyApp, TabsPage],
@@ -28,7 +29,8 @@ import { TabsPage } from "./../pages/tabs/tabs";
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     PacienteSingleton,
-    InAppBrowser
+    InAppBrowser,
+    TabelaImcProvider
   ]
 })
 export class AppModule {}

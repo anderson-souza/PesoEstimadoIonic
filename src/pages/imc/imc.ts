@@ -1,3 +1,4 @@
+import { TabelaImcProvider } from "./../../providers/tabela-imc/tabela-imc";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { PacienteSingleton } from "../../singleton/PacienteSingleton";
@@ -14,6 +15,7 @@ export class ImcPage {
   pacienteSingleton = PacienteSingleton.getInstance();
   formValidator: FormGroup;
   calculoRealizado: boolean = false;
+  public tabelaIMC: Array<TabelaImcProvider>;
 
   constructor(
     public navCtrl: NavController,
@@ -38,6 +40,19 @@ export class ImcPage {
         ])
       ]
     });
+  }
+
+  ionViewDidLoad() {
+    this.tabelaIMC = [
+      new TabelaImcProvider("abaixo de 16", "Magreza Grave"),
+      new TabelaImcProvider("16 - 16.9", "Magreza moderada"),
+      new TabelaImcProvider("17.0 - 18.4", "Magreza leve"),
+      new TabelaImcProvider("18.5 - 24.9", "Saudável"),
+      new TabelaImcProvider("25.0 - 29.9", "Sobrepeso"),
+      new TabelaImcProvider("30.0 - 34.9", "Obesidade Grau I"),
+      new TabelaImcProvider("35.0 - 39.9", "Obesidade Grau II"),
+      new TabelaImcProvider("acima de 40", "Obesidade Grau III")
+    ];
   }
 
   calcularIMC() {
