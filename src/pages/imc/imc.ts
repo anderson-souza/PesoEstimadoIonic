@@ -1,8 +1,8 @@
-import { TabelaImcProvider } from "./../../providers/tabela-imc/tabela-imc";
-import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { PacienteSingleton } from "../../singleton/PacienteSingleton";
-import { Validators, FormBuilder, FormGroup } from "@angular/forms";
+import {TabelaImcProvider} from "./../../providers/tabela-imc/tabela-imc";
+import {Component} from "@angular/core";
+import {IonicPage, NavController, NavParams} from "ionic-angular";
+import {PacienteSingleton} from "../../singleton/PacienteSingleton";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @IonicPage()
 @Component({

@@ -1,14 +1,7 @@
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { PacienteSingleton } from "./../../singleton/PacienteSingleton";
-import { Component, ViewChild } from "@angular/core";
-import {
-  ActionSheetController,
-  IonicPage,
-  NavController,
-  NavParams,
-  Content,
-  ModalController
-} from "ionic-angular";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {PacienteSingleton} from "./../../singleton/PacienteSingleton";
+import {Component, ViewChild} from "@angular/core";
+import {ActionSheetController, Content, IonicPage, ModalController, NavController, NavParams} from "ionic-angular";
 
 @IonicPage()
 @Component({

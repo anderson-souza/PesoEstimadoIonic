@@ -1,18 +1,9 @@
-import { Injectable } from "@angular/core";
+import {Injectable} from "@angular/core";
 import "rxjs/add/operator/map";
 
 @Injectable()
 export class PacienteSingleton {
   private static _instance: PacienteSingleton = new PacienteSingleton();
-
-  private _sexo: String;
-  private _comprimentoPerna: number;
-  private _circunferenciaBraco: number;
-  private _idade: number;
-  private _etnia: String;
-  private _alturaEstimada: number;
-  private _pesoEstimado: number;
-  private _imcPaciente: number;
 
   constructor() {
     if (PacienteSingleton._instance) {
@@ -21,17 +12,7 @@ export class PacienteSingleton {
     PacienteSingleton._instance = this;
   }
 
-  public get circunferenciaBraco(): number {
-    return this._circunferenciaBraco;
-  }
-
-  public set circunferenciaBraco(value: number) {
-    this._circunferenciaBraco = value;
-  }
-
-  public static getInstance(): PacienteSingleton {
-    return PacienteSingleton._instance;
-  }
+  private _sexo: String;
 
   public get sexo(): String {
     return this._sexo;
@@ -41,6 +22,8 @@ export class PacienteSingleton {
     this._sexo = value;
   }
 
+  private _comprimentoPerna: number;
+
   public get comprimentoPerna(): number {
     return this._comprimentoPerna;
   }
@@ -48,6 +31,18 @@ export class PacienteSingleton {
   public set comprimentoPerna(value: number) {
     this._comprimentoPerna = value;
   }
+
+  private _circunferenciaBraco: number;
+
+  public get circunferenciaBraco(): number {
+    return this._circunferenciaBraco;
+  }
+
+  public set circunferenciaBraco(value: number) {
+    this._circunferenciaBraco = value;
+  }
+
+  private _idade: number;
 
   public get idade(): number {
     return this._idade;
@@ -57,6 +52,8 @@ export class PacienteSingleton {
     this._idade = value;
   }
 
+  private _etnia: String;
+
   public get etnia(): String {
     return this._etnia;
   }
@@ -64,6 +61,8 @@ export class PacienteSingleton {
   public set etnia(value: String) {
     this._etnia = value;
   }
+
+  private _alturaEstimada: number;
 
   public get alturaEstimada(): number {
     return this._alturaEstimada;
@@ -73,6 +72,8 @@ export class PacienteSingleton {
     this._alturaEstimada = value;
   }
 
+  private _pesoEstimado: number;
+
   public get pesoEstimado(): number {
     return this._pesoEstimado;
   }
@@ -81,12 +82,18 @@ export class PacienteSingleton {
     this._pesoEstimado = value;
   }
 
+  private _imcPaciente: number;
+
   public get imcPaciente(): number {
     return this._imcPaciente;
   }
 
   public set imcPaciente(value: number) {
     this._imcPaciente = value;
+  }
+
+  public static getInstance(): PacienteSingleton {
+    return PacienteSingleton._instance;
   }
 
   public limparCampos() {

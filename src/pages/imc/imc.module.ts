@@ -1,8 +1,8 @@
-import { NgModule } from "@angular/core";
-import { IonicPageModule } from "ionic-angular";
-import { ImcPage } from "./imc";
-import { TooltipsModule } from "ionic-tooltips";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {NgModule} from "@angular/core";
+import {IonicPageModule} from "ionic-angular";
+import {ImcPage} from "./imc";
+import {TooltipsModule} from "ionic-tooltips";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [ImcPage],
@@ -12,4 +12,5 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     BrowserAnimationsModule
   ]
 })
-export class ImcPageModule {}
+export class ImcPageModule {
+}

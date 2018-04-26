@@ -15,8 +15,9 @@
       <ion-item>
         <ion-label floating>Peso</ion-label>
         <ion-input formControlName="peso" [(ngModel)]="pacienteSingleton.pesoEstimado" type="number"></ion-input>
-        <button ion-button item-end icon-only clear tooltip="Informe o peso do paciente(kg)" positionV="bottom" positionH="right"
-          arrow>
+        <button ion-button item-end icon-only clear tooltip="Informe o peso do paciente(kg)" positionV="bottom"
+                positionH="right"
+                arrow>
           <ion-icon name="help"></ion-icon>
         </button>
       </ion-item>
@@ -26,9 +27,11 @@
 
       <ion-item>
         <ion-label floating>Altura</ion-label>
-        <ion-input formControlName="altura" step="0.01" type="number" [(ngModel)]="pacienteSingleton.alturaEstimada"></ion-input>
-        <button ion-button item-end icon-only clear tooltip="Informe a altura do paciente(m)" positionV="bottom" positionH="right"
-          arrow>
+        <ion-input formControlName="altura" step="0.01" type="number"
+                   [(ngModel)]="pacienteSingleton.alturaEstimada"></ion-input>
+        <button ion-button item-end icon-only clear tooltip="Informe a altura do paciente(m)" positionV="bottom"
+                positionH="right"
+                arrow>
           <ion-icon name="help"></ion-icon>
         </button>
       </ion-item>

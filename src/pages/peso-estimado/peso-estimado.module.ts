@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
-import { PesoEstimadoPage } from './peso-estimado';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TooltipsModule } from 'ionic-tooltips';
+import {NgModule} from '@angular/core';
+import {IonicPageModule} from 'ionic-angular';
+import {PesoEstimadoPage} from './peso-estimado';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {TooltipsModule} from 'ionic-tooltips';
 
 @NgModule({
   declarations: [
@@ -14,4 +14,5 @@ import { TooltipsModule } from 'ionic-tooltips';
     BrowserAnimationsModule,
   ],
 })
-export class PesoEstimadoPageModule {}
+export class PesoEstimadoPageModule {
+}

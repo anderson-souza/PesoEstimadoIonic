@@ -1,11 +1,6 @@
-import { Component } from "@angular/core";
-import {
-  IonicPage,
-  NavController,
-  NavParams,
-  ViewController
-} from "ionic-angular";
-import { InAppBrowser } from "@ionic-native/in-app-browser";
+import {Component} from "@angular/core";
+import {IonicPage, NavController, NavParams, ViewController} from "ionic-angular";
+import {InAppBrowser} from "@ionic-native/in-app-browser";
 
 @IonicPage()
 @Component({
@@ -18,14 +13,15 @@ export class ModalPageSobre {
     public navCtrl: NavController,
     public navParams: NavParams,
     private iab: InAppBrowser
-  ) {}
+  ) {
+  }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad ModalPageSobre");
   }
 
   openLinkedinPage() {
-    const browser = this.iab.create(
+    this.iab.create(
       "https://www.linkedin.com/in/andersonpds/",
       "_self"
     );
