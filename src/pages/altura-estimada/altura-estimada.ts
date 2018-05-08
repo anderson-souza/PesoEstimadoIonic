@@ -25,6 +25,7 @@ export class AlturaEstimadaPage {
   ) {
     this.formValidator = formBuilder.group({
       sexo: ["", Validators.required],
+      etnia: ["", Validators.required],
       idade: [
         "",
         Validators.compose([

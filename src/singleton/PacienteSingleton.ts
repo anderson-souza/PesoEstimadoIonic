@@ -106,14 +106,25 @@ export class PacienteSingleton {
     this._imcPaciente = null;
     this._circunferenciaBraco = null;
   }
+  /* Mulheres brancas: Altura = 70,25 + (1,87 x altura de joelho) – (0,06 x idade)
+Mulheres negras: Altura = 68,1+ (1,86 x altura de joelho) – (0,06 x idade)
+Homens brancos: Altura = 71,85 + (1,88 x altura de joelho)
+Homens negros: Altura = 73,42+ (1,79 x altura de joelho) */
 
   calcularAlturaEstimada() {
     if (this.sexo == "Masculino") {
-      this.alturaEstimada =
-        2.02 * this.comprimentoPerna - 0.04 * this.idade + 64.19;
+      if (this.etnia == "Branco"){
+        this.alturaEstimada = 71.85 + (1.88 * this.comprimentoPerna);
+      }
+      else {
+        this.alturaEstimada = 73.42 + (1.79 * this.comprimentoPerna);
+      }
     } else {
-      this.alturaEstimada =
-        1.83 * this.comprimentoPerna - 0.24 * this.idade + 84.88;
+      if (this.etnia == "Branco"){
+        this.alturaEstimada = 70.25 + (1.87 * this.comprimentoPerna) - (0.06 * this.idade);
+      } else {
+        this.alturaEstimada = 68.01 + (1.86 * this.comprimentoPerna) - (0.06 * this.idade);
+      }
     }
     this.alturaEstimada = Math.round(this.alturaEstimada);
     this.alturaEstimada /= 100;
@@ -124,28 +135,28 @@ export class PacienteSingleton {
       if (this.etnia == "Branco") {
         //Homem Branco
         this.pesoEstimado =
-          this.comprimentoPerna * 1.19 +
-          this.circunferenciaBraco * 3.21 -
+          (this.comprimentoPerna * 1.19) +
+          (this.circunferenciaBraco * 3.21) -
           86.82;
       } else {
         //Homem Negro
         this.pesoEstimado =
-          this.comprimentoPerna * 1.09 +
-          this.circunferenciaBraco * 3.14 -
+          (this.comprimentoPerna * 1.09) +
+          (this.circunferenciaBraco * 3.14) -
           83.72;
       }
     } else {
       if (this.etnia == "Branco") {
         //Mulher Branca
         this.pesoEstimado =
-          this.comprimentoPerna * 1.01 +
-          this.circunferenciaBraco * 2.81 -
+          (this.comprimentoPerna * 1.01) +
+          (this.circunferenciaBraco * 2.81) -
           66.04;
       } else {
         //Mulher Negra
         this.pesoEstimado =
-          this.comprimentoPerna * 1.24 +
-          this.circunferenciaBraco * 2.81 -
+          (this.comprimentoPerna * 1.24) +
+          (this.circunferenciaBraco * 2.81) -
           82.48;
       }
     }
