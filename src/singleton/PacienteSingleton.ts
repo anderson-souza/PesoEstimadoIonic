@@ -52,14 +52,14 @@ export class PacienteSingleton {
     this._idade = value;
   }
 
-  private _etnia: String;
+  private _raca: String;
 
-  public get etnia(): String {
-    return this._etnia;
+  public get raca(): String {
+    return this._raca;
   }
 
-  public set etnia(value: String) {
-    this._etnia = value;
+  public set raca(value: String) {
+    this._raca = value;
   }
 
   private _alturaEstimada: number;
@@ -100,7 +100,7 @@ export class PacienteSingleton {
     this._sexo = "";
     this._comprimentoPerna = null;
     this._idade = null;
-    this._etnia = "";
+    this._raca = "";
     this._alturaEstimada = null;
     this._pesoEstimado = null;
     this._imcPaciente = null;
@@ -113,14 +113,14 @@ Homens negros: Altura = 73,42+ (1,79 x altura de joelho) */
 
   calcularAlturaEstimada() {
     if (this.sexo == "Masculino") {
-      if (this.etnia == "Branco"){
+      if (this.raca == "Branco"){
         this.alturaEstimada = 71.85 + (1.88 * this.comprimentoPerna);
       }
       else {
         this.alturaEstimada = 73.42 + (1.79 * this.comprimentoPerna);
       }
     } else {
-      if (this.etnia == "Branco"){
+      if (this.raca == "Branco"){
         this.alturaEstimada = 70.25 + (1.87 * this.comprimentoPerna) - (0.06 * this.idade);
       } else {
         this.alturaEstimada = 68.01 + (1.86 * this.comprimentoPerna) - (0.06 * this.idade);
@@ -132,7 +132,7 @@ Homens negros: Altura = 73,42+ (1,79 x altura de joelho) */
 
   calcularPesoEstimado() {
     if (this.sexo == "Masculino") {
-      if (this.etnia == "Branco") {
+      if (this.raca == "Branco") {
         //Homem Branco
         this.pesoEstimado =
           (this.comprimentoPerna * 1.19) +
@@ -146,7 +146,7 @@ Homens negros: Altura = 73,42+ (1,79 x altura de joelho) */
           83.72;
       }
     } else {
-      if (this.etnia == "Branco") {
+      if (this.raca == "Branco") {
         //Mulher Branca
         this.pesoEstimado =
           (this.comprimentoPerna * 1.01) +

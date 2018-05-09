@@ -23,7 +23,7 @@ export class PesoEstimadoPage {
   ) {
     this.formValidator = formBuilder.group({
       sexo: ["", Validators.required],
-      etnia: ["", Validators.required],
+      raca: ["", Validators.required],
       compPerna: [
         "",
         Validators.compose([

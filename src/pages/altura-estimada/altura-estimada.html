@@ -37,10 +37,10 @@
       <p style="color:red;">Selecione um sexo</p>
     </ion-item>
 
-    <ion-list required radio-group formControlName="etnia" [(ngModel)]="pacienteSingleton.etnia">
+    <ion-list required radio-group formControlName="raca" [(ngModel)]="pacienteSingleton.raca">
       <ion-item-divider>
-        Etnia
-        <button ion-button item-end icon-only clear tooltip="Informe a Etnia do Paciente" positionV="bottom"
+        Raça
+        <button ion-button item-end icon-only clear tooltip="Informe a Raça do Paciente" positionV="bottom"
                 positionH="right">
           <ion-icon name="help"></ion-icon>
         </button>
@@ -54,8 +54,8 @@
         <ion-radio value="Negro"></ion-radio>
       </ion-item>
     </ion-list>
-    <ion-item *ngIf="!formValidator.controls.etnia.valid && calculoRealizado">
-      <p style="color:red;">Selecione uma etnia</p>
+    <ion-item *ngIf="!formValidator.controls.raca.valid && calculoRealizado">
+      <p style="color:red;">Selecione uma Raça</p>
     </ion-item>
 
     <ion-item>
